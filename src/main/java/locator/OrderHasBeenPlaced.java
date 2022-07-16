@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class OrderHasBeenPlaced extends BasePage{
 
-    private By statusOrder  = By.xpath(".//div[@class='Order_ModalHeader__3FDaJ']"); // Заголовок Заказ оформлен
+    private By statusOrder  = By.className("Order_NextButton__1_rCA"); // Класс экрана Заказ оформлен
+
 
     public OrderHasBeenPlaced(WebDriver driver) {
         super(driver);

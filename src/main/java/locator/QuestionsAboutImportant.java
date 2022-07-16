@@ -20,6 +20,11 @@ public class QuestionsAboutImportant extends BasePage{
                 .until(ExpectedConditions.visibilityOfElementLocated(question));
         return this;
     }
+    public QuestionsAboutImportant waitForLoadAnswer(By answer){
+        new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.visibilityOfElementLocated(answer));
+        return this;
+    }
     public QuestionsAboutImportant skrolQuestion() {
         WebElement element = driver.findElement(question);
        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",element);
@@ -44,7 +49,10 @@ public class QuestionsAboutImportant extends BasePage{
         String answer_xpath = ".//div[@id='accordion__panel-" + num + "']";
         By question = By.id(question_xpath);
         clickQuestion(question);
+
+
         By answer = By.xpath(answer_xpath);
+        waitForLoadAnswer(answer);
         String result_answer  = enterAnswer(answer);
         return result_answer;
          

@@ -14,14 +14,15 @@ public class BaseUITest {
 
     @Before
     public void setUp(){
-
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+         WebDriverManager.firefoxdriver().setup();
+         driver = new FirefoxDriver();
+        // WebDriverManager.chromedriver().setup();
+        // driver = new ChromeDriver();
     }
 
    @After
     public void teatDown(){
-           driver.quit();
+        driver.quit();
     }
 
 }
